@@ -1,5 +1,5 @@
 {
-  "name": "rango-backend",
+  "name": "corisco-backend",
   "version": "1.0.0",
   "description": "",
   "main": "src/loader.js",
@@ -7,9 +7,9 @@
     "dropTestDB": "mongo BDscripts/dropBDTeste.js",
     "test": "export NODE_ENV=test && tape ./tests/**/*.js | tap-spec && npm run dropTestDB",
     "dev": "export NODE_ENV=development && nodemon --watch src/loader.js",
-    "production": "pm2 start src/loader.js --name rango-backend"
+    "production": "pm2 start src/loader.js --name corisco-backend"
   },
-  "keywords": ["rangoderua"],
+  "keywords": ["corisco"],
   "author": "Walter Santos Filho",
   "license": "ISC",
   "dependencies": {

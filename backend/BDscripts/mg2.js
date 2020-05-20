@@ -1,4 +1,4 @@
-db = db.getSiblingDB('rango')
+db = db.getSiblingDB('corisco')
 cursor = db.registroentregas.aggregate( [
 	{ $project : { quantidade: {$sum: "$items.quantidadeEntrega"}}},
 	{ $group : { _id: null, qtde: {$sum: "$quantidade"}}},

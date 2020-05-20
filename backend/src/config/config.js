@@ -4,8 +4,8 @@ config.production = {};
 config.test = {};
 config.development = {};
 
-config.production.mongodbURI = "mongodb://localhost/rangoPRD"
-config.test.mongodbURI = "mongodb://localhost/rangoTST"
-config.development.mongodbURI = "mongodb://localhost/rango"
+config.production.mongodbURI = "mongodb://localhost/coriscoPRD"
+config.test.mongodbURI = "mongodb://localhost/coriscoTST"
+config.development.mongodbURI = "mongodb://localhost/corisco"
 
 module.exports = config;

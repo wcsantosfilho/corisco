@@ -1,5 +1,5 @@
 # rango
-Aplicação Node.js + React para Rango de Rua
+Aplicação Node.js + React para controlar meus jogos da mega-sena
 
 # To do
-## Teste de leitura de registro pela data
+## 

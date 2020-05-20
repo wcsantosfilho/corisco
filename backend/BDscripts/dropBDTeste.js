@@ -1,4 +1,5 @@
-db = db.getSiblingDB('rangoTST')
-db.registroentregas.drop()
+db = db.getSiblingDB('coriscoTST')
+db.apostas.drop()
+db.palpites.drop()
 print(db.getCollectionNames())
 print("Database wiped")

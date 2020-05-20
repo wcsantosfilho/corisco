@@ -1,2 +1,2 @@
-db = db.getSiblingDB('rango')
+db = db.getSiblingDB('corisco')
 print(db.getCollectionNames())
