@@ -6,13 +6,13 @@ export default props => (
         <div className='info-box bg-red'>
             <span className='info-box-icon'><i className='fa fa-comments-o'></i></span>
             <div className='info-box-content'>
-                <span className='info-box-text'>Concursos</span>
-                <span className='info-box-number'>1280 a 1288</span>
+                <span className='info-box-text'>{props.title}</span>
+                <span className='info-box-number'>{props.currentBet}</span>
                 <div className='progress'>
                     <div className='progress-bar'></div>
                 </div>
                 <span className='progress-description'>
-                    6 de 8 concursos realizados
+                    {props.evolution}
                 </span>
             </div>
         </div>

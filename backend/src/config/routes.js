@@ -1,12 +1,17 @@
 const express = require('express')
-const registroDeAposta = require('../api/registroDeAposta/RegistroDeApostaService')
+const betRecords = require('../api/betRecord/betRecordService')
 
 module.exports = function(server) {
-    // Definir URL base para todas as rotas
+    /*
+     * Define base URL to all routes
+     * Definir URL base para todas as rotas
+     */
     const router = express.Router()
     server.use('/api', router)
 
-    // bar seria uma outra rota alternativa a /api
+    /* 
+     * 'bar' is a alternative to /api route
+     */
     server.use('/bar', (req,res,next) => {
         console.log('%s %s %s', req.method, req.url, req.path)
         res.status(200)
@@ -14,7 +19,9 @@ module.exports = function(server) {
         next()
     })
 
-    // foo fica dentro de /api
+    /*
+     * 'foo' works insede /api
+     */
     router.use('/foo', (req, res, next) => {
         try {
             var result = { "xpto": "abcd" }
@@ -26,7 +33,10 @@ module.exports = function(server) {
         }
     })
 
-    // estas ficam dentro de api e estão definidas em RegistroDeApostaService.js
-    router.use('/addAposta', registroDeAposta.addAposta)
-    router.use('/addPalpitesDaAposta', registroDeAposta.addPalpitesDaAposta)
+    /*
+     * The endpoints below stay under /api/ and are defined in betRecordService.js
+     */
+    router.use('/addBet', betRecords.addBet)
+    router.use('/getCurrentBet', betRecords.getCurrentBet)
+
 }
