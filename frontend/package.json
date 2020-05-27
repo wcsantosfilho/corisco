@@ -1,14 +1,14 @@
 {
-  "name": "rango-frontend",
+  "name": "corisco-frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend da aplicação de controle de jogos na Mega Sena.",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --colors --inline --hot",
     "production": "webpack --progress -p"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["corisco"],
+  "author": "Walter Santos Filho",
   "license": "ISC",
   "devDependencies": {
     "admin-lte": "2.3.6",

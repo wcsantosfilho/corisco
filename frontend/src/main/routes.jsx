@@ -6,7 +6,7 @@ import RegistroApostas from '../apostas/registroApostas'
 
 export default props => (
     <Router history={hashHistory}>
-        <Route path='/' component={Dashboard} />
+        <Route exact path='/' component={Dashboard} />
         <Route path='/registroApostas' component={RegistroApostas} />
         <Redirect from='*' to='/' />
     </Router>

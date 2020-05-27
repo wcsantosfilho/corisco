@@ -28,8 +28,8 @@ getCurrentBet = async (req, res, next) => {
     try{
         var bet = betRecord.bets
         var result = await bet.find().limit(1).sort( { finalRound: -1 })
-        console.log(result)
-        res.status(200).json(result)
+        console.log('getCurrentBet')
+        res.status(200).send(result[0])
         next()
     } catch (error) {
         console.log(error)

@@ -1,7 +1,7 @@
 {
   "name": "corisco-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend da aplicação de controle de jogos da Mega Sena",
   "main": "src/loader.js",
   "scripts": {
     "dropTestDB": "mongo BDscripts/dropBDTeste.js",
@@ -9,7 +9,9 @@
     "dev": "export NODE_ENV=development && nodemon --watch src/loader.js",
     "production": "pm2 start src/loader.js --name corisco-backend"
   },
-  "keywords": ["corisco"],
+  "keywords": [
+    "corisco"
+  ],
   "author": "Walter Santos Filho",
   "license": "ISC",
   "dependencies": {
@@ -18,7 +20,6 @@
     "express-query-int": "^1.0.1",
     "lodash": "^4.17.15",
     "mongoose-paginate": "^5.0.3",
-    "node-restful": "^0.2.6",
     "pm2": "^2.10.4",
     "tap-spec": "^5.0.0",
     "tape": "^4.11.0"
