@@ -23,7 +23,7 @@ class Dashboard extends Component {
                 <ContentHeader title='Dashboard' small='Versão 1.0' />
                 <Content>
                     <Row>
-                        <StatusBox cols='12 4' color='green' title = 'CONCURSOS'
+                        <StatusBox cols='12 4' color='green'  evolution='' title = 'CONCURSOS'
                             currentBet = {`${initialRound} a ${finalRound}`} 
                             evolution = {`4 realizados de 8 apostados`}/>
                     </Row>

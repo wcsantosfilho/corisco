@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import axios from 'axios'
 
-import { getSummary } from './dashboardActions'
 import ContentHeader from '../common/template/contentHeader'
 import Content from '../common/template/content'
 import ValueBox from '../common/widget/valueBox'
@@ -10,20 +8,28 @@ import TicketBox from '../common/widget/ticketBox'
 import StatusBox from '../common/widget/statusBox'
 import Row from '../common/layout/row'
 
-class Dashboard extends Component {
+const BASE_URL = 'http://localhost:3003/api'
+
+export default class Dashboard2 extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = { initialRound: 3030, finalRound: 3033}
+    }
 
     componentWillMount() {
-        this.props.getSummary()
+        axios.get(`${BASE_URL}/api/getCurrentBet`)
+            .then(resp => this.setState(resp.data))
     }
 
     render() {
-        const { initialRound, finalRound } = this.props.currentBet
+        const { initialRound, finalRound } = this.state
         return (
             <div>
                 <ContentHeader title='Dashboard' small='Versão 1.0' />
                 <Content>
                     <Row>
-                        <StatusBox cols='12 4' color='green' title = 'CONCURSOS'
+                        <StatusBox cols='12 4' color='green'  evolution='' title = 'CONCURSOS'
                             currentBet = {`${initialRound} a ${finalRound}`} 
                             evolution = {`4 realizados de 8 apostados`}/>
                     </Row>
@@ -40,7 +46,3 @@ class Dashboard extends Component {
         )
     }
 }
-
-const mapStateToProps = state => ({currentBet: state.dashboard.currentBet})
-const mapDispatchToProps = dispatch => bindActionCreators({getSummary}, dispatch)
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)

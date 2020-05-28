@@ -1,6 +1,5 @@
 import React from 'react'
 
-/* eslint-disable */ 
 export default props => (
     <header className='main-header'>
         <a href='/#/' className='logo'>
@@ -11,7 +10,7 @@ export default props => (
             </span>
         </a>
         <nav className='navbar navbar-static-top'>
-            <span className='sidebar-toggle' data-toggle='offcanvas'></span>
+            <a href className='sidebar-toggle' data-toggle='offcanvas'></a>
         </nav>
     </header>
 )
