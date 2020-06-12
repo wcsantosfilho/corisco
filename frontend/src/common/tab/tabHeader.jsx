@@ -6,8 +6,9 @@ import { selectTab } from './tabActions'
 /* eslint no-script-url: 0 */
 class TabHeader extends Component {
     render() {
+        const selected = this.props.tab.selected === this.props.target
         return (
-            <li>
+            <li className={selected ? 'active' : ''}>
                 <a href='javascript:;'
                     data-toggle='tab'
                     onClick={() => this.props.selectTab(this.props.target)}
