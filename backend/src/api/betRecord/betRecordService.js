@@ -37,4 +37,23 @@ getCurrentBet = async (req, res, next) => {
         res.status(500).send(error)
     }
 }
-module.exports = { addBet, getCurrentBet }
+
+/*
+ * getBets
+ * 
+ * List all bets
+ */
+getBets = async (req, res, next) => {
+    try{
+        var bet = betRecord.bets
+        var result = await bet.find().sort( { finalRound: -1 })
+        console.log('getBets')
+        console.log(result)
+        res.status(200).send(result)
+        next()
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error)
+    }
+}
+module.exports = { addBet, getCurrentBet, getBets }
