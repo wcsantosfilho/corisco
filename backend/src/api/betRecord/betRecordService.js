@@ -7,15 +7,14 @@ const betRecord = require('./betRecord')
  * add a Bet to the database
  */
 addBet = async (req, res, next) => {
-    try{
-        var bet = await new betRecord.bets(req.body)
+    try {
+        console.log('antes do save')
         console.log(req.body)
-        var result = bet.save()
-        res.status(201)
+        const bet = await new betRecord.bets( {...req.body} ).save()
         res.send(bet)
-    } catch (error) {
-        console.log(error)
-        res.status(500).send(error)
+    } catch (err) {
+        console.log('Erro encontrado: ' + err)
+        res.status(422).send(err)
     }
 }
 
@@ -28,8 +27,6 @@ getCurrentBet = async (req, res, next) => {
     try{
         var bet = betRecord.bets
         var result = await bet.find().limit(1).sort( { finalRound: -1 })
-        console.log('getCurrentBet')
-        console.log(result)
         res.status(200).send(result[0])
         next()
     } catch (error) {
@@ -47,8 +44,6 @@ getBets = async (req, res, next) => {
     try{
         var bet = betRecord.bets
         var result = await bet.find().sort( { finalRound: -1 })
-        console.log('getBets')
-        console.log(result)
         res.status(200).send(result)
         next()
     } catch (error) {

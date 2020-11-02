@@ -10,6 +10,9 @@ import TabsContent from '../common/tab/tabsContent'
 import TabHeader from '../common/tab/tabHeader'
 import TabContent from '../common/tab/tabContent'
 import { selectTab, showTabs } from '../common/tab/tabActions'
+import List from './registroApostasList'
+import Form from './registroApostasForm'
+import { create } from './registroApostasActions'
 
 class RegistroApostas extends Component {
 
@@ -31,8 +34,12 @@ class RegistroApostas extends Component {
                             <TabHeader label='Excluir' icon='trash-o' target='tabDelete' />
                         </TabsHeader>
                         <TabsContent>
-                            <TabContent id='tabList'><h1>Lista</h1></TabContent>
-                            <TabContent id='tabCreate'><h1>Create</h1></TabContent>
+                            <TabContent id='tabList'>
+                                <List />
+                            </TabContent>
+                            <TabContent id='tabCreate'>
+                                <Form onSubmit={this.props.create} />
+                            </TabContent>
                             <TabContent id='tabUpdate'><h1>Update</h1></TabContent>
                             <TabContent id='tabDelete'><h1>Delete</h1></TabContent>
                         </TabsContent>
@@ -43,5 +50,5 @@ class RegistroApostas extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({selectTab, showTabs}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({selectTab, showTabs, create }, dispatch)
 export default connect(null, mapDispatchToProps)(RegistroApostas)
