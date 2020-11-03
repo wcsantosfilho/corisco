@@ -11,7 +11,6 @@ export function getList() {
 
 export function create(values) {
     var params = JSON.parse(JSON.stringify(values))
-    console.log('params: ' + params.betDate)
     const options = {
         headers: {
             'Content-type': 'application/json',
@@ -22,7 +21,7 @@ export function create(values) {
     axios({
         url: `${BASE_URL}/addBet`,
         method: 'post',
-        data: { hello: 'world'},
+        data: params,
         options: options
         })
         .then(resp => {
