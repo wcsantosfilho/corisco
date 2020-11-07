@@ -3,7 +3,6 @@ const port = 3003
 const bodyParser = require('body-parser')
 const express = require('express')
 const server = express()
-const allowCors = require('./cors')
 const cors = require('cors')
 const queryParser = require('express-query-int')
 
@@ -12,7 +11,6 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
-//server.use(allowCors)
 server.use(cors())
 server.use(queryParser())
 

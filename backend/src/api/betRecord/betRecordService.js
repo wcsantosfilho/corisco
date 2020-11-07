@@ -8,8 +8,6 @@ const betRecord = require('./betRecord')
  */
 addBet = async (req, res, next) => {
     try {
-        console.log('antes do save')
-        console.log(req.body)
         const bet = await new betRecord.bets( {...req.body} ).save()
         res.send(bet)
     } catch (err) {
