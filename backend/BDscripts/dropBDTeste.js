@@ -1,5 +1,4 @@
 db = db.getSiblingDB('coriscoTST')
-db.apostas.drop()
-db.palpites.drop()
+db.bets.drop()
 print(db.getCollectionNames())
 print("Database wiped")

@@ -20,14 +20,14 @@
     "express": "^4.17.1",
     "express-query-int": "^3.0.0",
     "lodash": "^4.17.19",
-    "mongoose": "^5.6.11",
+    "mongoose": "^5.10.13",
     "mongoose-paginate": "^5.0.3",
-    "pm2": "^3.0.4",
+    "pm2": "^4.5.0",
     "tap-spec": "^5.0.0",
-    "tape": "^4.11.0"
+    "tape": "^4.13.3"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1",
-    "supertest": "^3.4.2"
+    "nodemon": "^2.0.6",
+    "supertest": "^6.0.1"
   }
 }
