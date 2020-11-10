@@ -10,9 +10,9 @@ addBet = async (req, res, next) => {
     try {
         const bet = await new betRecord.bets( {...req.body} ).save()
         res.send(bet)
-    } catch (err) {
-        console.log('Erro encontrado: ' + err)
-        res.status(422).send(err)
+    } catch (error) {
+        console.log('Erro encontrado: ' + error)
+        res.status(422).json(error)
     }
 }
 
@@ -29,7 +29,7 @@ getCurrentBet = async (req, res, next) => {
         next()
     } catch (error) {
         console.log(error)
-        res.status(500).send(error)
+        res.status(500).json(error)
     }
 }
 
@@ -46,7 +46,7 @@ getBets = async (req, res, next) => {
         next()
     } catch (error) {
         console.log(error)
-        res.status(500).send(error)
+        res.status(500).json(error)
     }
 }
 module.exports = { addBet, getCurrentBet, getBets }

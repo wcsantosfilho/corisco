@@ -6,6 +6,7 @@ import Header from '../common/template/header'
 import SideBar from '../common/template/sidebar'
 import Footer from '../common/template/footer'
 import Routes from './routes'
+import Messages from '../common/msg/messages'
 
 export default props => (
     <HashRouter>
@@ -14,6 +15,7 @@ export default props => (
             <SideBar />
             <Routes />
             <Footer />
+            <Messages />
         </div>
     </HashRouter>
 )

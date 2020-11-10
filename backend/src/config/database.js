@@ -23,7 +23,7 @@ if (process.env.NODE_ENV == "development") {
 
 mongoose.Promise = global.Promise
 
-module.exports = mongoose.connect(MONGO_URI, {useNewUrlParser: true})
+module.exports = mongoose.connect(MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 console.log("MONGO_URI:" + MONGO_URI)
 mongoose.Error.messages.general.required = "O atributo '{PATH}' é obrigatório."
 mongoose.Error.messages.Number.min = 
