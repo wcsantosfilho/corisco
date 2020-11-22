@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { getList } from './registroApostasActions'
+import { getList, showUpdate } from './registroApostasActions'
 
 class RegistroApostasList extends Component {
 
@@ -17,6 +17,11 @@ class RegistroApostasList extends Component {
                 <td>{aposta.betDate}</td>
                 <td>{aposta.initialRound}</td>
                 <td>{aposta.finalRound}</td>
+                <td>
+                    <button className='btn btn-warning' onClick={() => this.props.showUpdate(aposta)}>
+                        <i className='fa fa-pencil'></i>
+                    </button>
+                </td>
             </tr>
         ))
     }
@@ -30,6 +35,7 @@ class RegistroApostasList extends Component {
                             <th>Data Aposta</th>
                             <th>Conc.Inicial</th>
                             <th>Conc.Final</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,5 +48,5 @@ class RegistroApostasList extends Component {
 }
 
 const mapStateToProps = state => ({list: state.apostas.list})
-const mapDispatchToProps = dispatch => bindActionCreators({getList}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({getList, showUpdate}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(RegistroApostasList)

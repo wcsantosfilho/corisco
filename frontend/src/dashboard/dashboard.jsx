@@ -10,6 +10,7 @@ import TicketBox from '../common/widget/ticketBox'
 import StatusBox from '../common/widget/statusBox'
 import Row from '../common/layout/row'
 
+
 class Dashboard extends Component {
 
     componentWillMount() {
