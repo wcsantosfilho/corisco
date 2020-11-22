@@ -24,4 +24,4 @@ class RegistroApostasForm extends Component {
     }
 }
 
-export default reduxForm({form: 'RegistroApostasForm'})(RegistroApostasForm)
+export default reduxForm({form: 'RegistroApostasForm', destroyOnUnmount: false})(RegistroApostasForm)
