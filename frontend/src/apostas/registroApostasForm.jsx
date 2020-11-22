@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { reduxForm, Field } from 'redux-form'
+import labelAndInput from '../common/form/labelAndInput'
 
 class RegistroApostasForm extends Component {
 
@@ -7,11 +8,11 @@ class RegistroApostasForm extends Component {
         const { handleSubmit } = this.props
 
         return (
-            <form role='form' onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className='box-body'>
-                    <Field name='betDate' component='input' />
-                    <Field name='initialRound' component='input' />
-                    <Field name='finalRound' component='input' />
+                    <Field name='betDate' component={labelAndInput} />
+                    <Field name='initialRound' component={labelAndInput} />
+                    <Field name='finalRound' component={labelAndInput} />
                 </div>
                 <div className='box-footer'>
                     <button type='submit' className='btn btn-primary'>Submit</button>
