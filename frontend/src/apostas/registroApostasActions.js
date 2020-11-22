@@ -21,6 +21,7 @@ export function create(values) {
                 toastr.success('Sucesso', 'Operação realizada com sucesso!')
                 dispatch([
                     resetForm('RegistroApostasForm'),
+                    getList(),
                     selectTab('tabList'),
                     showTabs('tabList', 'tabCreate')
                 ])
