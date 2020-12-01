@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     entry: './src/index.jsx',
@@ -25,7 +25,9 @@ module.exports = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
         }),
-        new ExtractTextPlugin('app.css')
+        new MiniCssExtractPlugin({
+            filename: 'app.css'
+        })
     ],
     module: {
         loaders: [{
@@ -38,12 +40,14 @@ module.exports = {
             }
         },
         {
-            test: /.css$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-        },
-        {
             test: /\.woff|.woff2|.ttf|.eot|.svg|.png|.jpg*.*$/,
             loader: 'file'
-        }]
+        }],
+        rules: [
+            {
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
+            }
+        ]
     }
 }

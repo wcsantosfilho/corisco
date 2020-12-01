@@ -1,6 +1,6 @@
 import React from 'react'
 
-/* eslint-disable */ 
+/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 export default props => (
     <header className='main-header'>
         <a href='/#/' className='logo'>

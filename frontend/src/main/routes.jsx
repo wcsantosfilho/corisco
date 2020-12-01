@@ -6,16 +6,7 @@ import { Switch, Route, Redirect } from 'react-router'
 import Dashboard from '../dashboard/dashboard'
 import RegistroApostas from '../apostas/registroApostas'
 
-/*
-export default props => (
-    <Router history={hashHistory}>
-        <Route exact path='/' component={Dashboard} />
-        <Route path='/registroApostas' component={RegistroApostas} />
-        <Redirect from='*' to='/' />
-    </Router>
-)
-*/
-
+/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 export default props => (
     <div className='content-wrapper'>
         <Switch>

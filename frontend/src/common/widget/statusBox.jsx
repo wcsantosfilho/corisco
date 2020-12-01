@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from '../layout/grid'
 
+/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 export default props => (
     <Grid cols={props.cols}>
         <div className='info-box bg-red'>

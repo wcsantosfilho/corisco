@@ -7,7 +7,7 @@ class RegistroApostasForm extends Component {
     render() {
         const { handleSubmit } = this.props
         return (
-            <form role='form' onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className='box-body'>
                     <Field name='betDate' component={labelAndInput} 
                         label='Data da Aposta' cols='12 4' placeholder='Iso Date' type='date'/>
